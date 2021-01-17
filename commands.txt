@@ -1,0 +1,29 @@
+#For executing sql
+docker exec -it d48c449f28a3 "bash"
+
+#For entering into bash Terminal
+/opt/mssql-tools/bin/sqlcmd -U SA -P Alaska2017
+We will get "1>"
+#For Creaitng and seeing the Exsisting Databases
+
+1> CREATE DATABASE TestDB
+2> SELECT Name from sys.Databases
+3> GO
+
+
+#Using the TestDb and creating table, inserting rows in table
+1>USE TestDB
+2> CREATE TABLE Inventory(id INT,name NVARCHAR(50),quantity INT)
+3> INSERT INTO Inventory VALUES(1,'banana',150); INSERT INTO Inventory VALUES(2,'ORANGE',154);
+4> GO
+
+#Quering table
+
+1> SELECT * FROM Inventory WHERE quantity > 152;
+2> GO
+
+"quit" from sql
+"exit" from bash
+
+From CLI to run docker sql image:
+https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver15&pivots=cs1-cmd
