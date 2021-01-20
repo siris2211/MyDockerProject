@@ -1,0 +1,10 @@
+root@12805cc2d7b5:/# mysql -p -e "SHOW DATABASES;"
+Enter password:
+
+mysql -p -e “CREATE DATABASE tempDB”
+
+mysql -p -e “CREATE TABLE tempDB.tab”
+
+mysql -p -e “INSERT INTO tempDB.tab VALUES(1,'banana',150); INSERT INTO tempDB.tab VALUES(2,'ORANGE',154);”
+
+mysql -p -e “SELECT * FROM tempDB.tab WHERE quantity > 152;
